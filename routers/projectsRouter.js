@@ -24,14 +24,14 @@ router.get("/", (req, res) => {
     .then(projects => res.status(200).json(projects))
     .catch(err => {
       console.log(err);
-      res.status(500).json({ message: "Could not retrieve projectss" });
+      res.status(500).json({ message: "Could not retrieve projects" });
     });
 });
 
 // GETting a specfic project
 router.get("/:id", validateProjectId, (req, res) => {
-  projectDb
-    .get(id)
+  projectsDb
+    .get(req.params.id)
     .then(project => res.status(200).json(project))
     .catch(err => {
       console.log(err);
@@ -42,7 +42,7 @@ router.get("/:id", validateProjectId, (req, res) => {
 });
 
 // GETting a specific project's actions
-router.get("/:id/posts", validateProjectId, (req, res) => {
+router.get("/:id/actions", validateProjectId, (req, res) => {
   projectsDb
     .getProjectActions(req.params.id)
     .then(actions => res.status(200).json(actions))
@@ -118,3 +118,5 @@ function validateProjectId(req, res, next) {
       });
     });
 }
+
+module.exports = router;

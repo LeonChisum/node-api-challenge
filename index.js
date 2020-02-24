@@ -9,8 +9,9 @@ const port = process.env.PORT || 4000
 server.use(express.json())
 
 
-server.use("/api/actions", actionsRouter)
+
 server.use("/api/projects", projectsRouter)
+server.use("/api/projects/:projectId/actions", actionsRouter)
 
 server.use((req, res) => {
     res.status(400).json({ message: "no route found" })
