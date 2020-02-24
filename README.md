@@ -40,13 +40,25 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+I learned about how express is a framework for node.js that allows it to create a server without all of
+the boilerplate needed. I aslo learned that express comes with different methods that make it easier to handle the server requests like "Router".
+
 - [ ] Describe Middleware?
+
+Middleware is functions that take in the parameters of the server request and response and allows you 
+to manipulate them in any way you like.
 
 - [ ] Describe a Resource?
 
+A resource is the object of whatever that is returned at the endpoint of a server request.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+The API can return json messages and also status codes.
+
 - [ ] How can we partition our application into sub-applications?
+
+We can do this by creating custom middleware and breaking up our app with different routers.
 
 ## Minimum Viable Product
 
